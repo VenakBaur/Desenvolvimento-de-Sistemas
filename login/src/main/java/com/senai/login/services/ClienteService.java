@@ -47,7 +47,7 @@ public class ClienteService {
         cliente.setEmail(novoCliente.getEmail());
         cliente.setTelefone(novoCliente.getTelefone());
         cliente.setDataCadastro(LocalDate.now());
-        cliente.setEndereco(novoCliente.getNome());
+        cliente.setEndereco(novoCliente.getEndereco());
         cliente.setNumeroEndereco(novoCliente.getNumeroEndereco());
 
         repositorio.save(cliente);
