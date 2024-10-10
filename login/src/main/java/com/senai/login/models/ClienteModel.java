@@ -20,7 +20,6 @@ public class ClienteModel {
     @Column(name = "ClienteNome")
     private String nome;
 
-    @Email
     @Column(name = "ClinteEmail")
     private String email;
 
