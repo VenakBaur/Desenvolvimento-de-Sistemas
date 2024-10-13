@@ -5,13 +5,13 @@ import jakarta.validation.constraints.NotNull;
 
 public class LoginDto {
 
-    @NotEmpty
-    @NotNull
-    private String login;
-
-    @NotEmpty
-    @NotNull
-    private String senha;
+   @NotEmpty
+   @NotNull
+   private String login;
+   
+   @NotEmpty
+   @NotNull
+   private String senha;
 
     public LoginDto() {
     }
@@ -31,5 +31,7 @@ public class LoginDto {
     public void setSenha(String senha) {
         this.senha = senha;
     }
-
+   
+   
+    
 }

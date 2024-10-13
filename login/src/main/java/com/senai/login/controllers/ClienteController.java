@@ -14,59 +14,60 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping("/cliente")
 public class ClienteController {
-
+    
     @Autowired
-    private ClienteService clienteService;
-
-    @PostMapping("/cliente")
-    public ResponseEntity<RespostaDto> cadastrarCliente(@RequestBody ClienteDto cliente) {
-
-        boolean retorno = clienteService.cadastrarCliente(cliente);
-
+    ClienteService clienteService;
+    
+    @PostMapping()
+    public  ResponseEntity<RespostaDto> cadastrarCliente(@RequestBody ClienteDto cliente){
+        
+        boolean retorno =  clienteService.cadastraCliente(cliente);
+        
         RespostaDto resposta = new RespostaDto();
-        resposta.setMensagem(retorno ? "Cadastro realizado com sucesso" : "Erro ao realizar o cadastro");
-
+        resposta.setMensagem(retorno ? "Cadastro realizado com sucesso" : "Erro ao realizar cadastro");
+        
         return ResponseEntity.status(HttpStatus.OK).body(resposta);
-
+        
     }
-
-    @PutMapping("/atualizarcliente/{email}")
-    public ResponseEntity<RespostaDto> atualizarCliente(@RequestBody ClienteDto cliente, @PathVariable String email) {
-
-        boolean retorno = clienteService.atualizarCliente(cliente, email);
-
+    
+    //-- PUT http://localhost:8080/usuario/admin
+    @PutMapping("{id}")
+    public  ResponseEntity<RespostaDto> atualizarCliente(@RequestBody ClienteDto cliente, @PathVariable Long id){
+        
+        boolean retorno =  clienteService.atualizarCliente(id, cliente);
+        
         RespostaDto resposta = new RespostaDto();
-
         resposta.setMensagem(retorno ? "Atualização realizado com sucesso" : "Erro ao realizar atualização");
-
+        
         return ResponseEntity.status(HttpStatus.OK).body(resposta);
-
     }
-
-    @GetMapping("/cliente")
-    public ResponseEntity<List<ClienteModel>> obterClientes() {
-
-        List<ClienteModel> lista = clienteService.obterClientes();
-
-        return ResponseEntity.status(HttpStatus.OK).body(lista);
-
-    }
-
-    @DeleteMapping("/cliente/{codigo}")
-    public ResponseEntity<RespostaDto> deletarCliente(@PathVariable Long codigo) {
-
-        boolean retorno = clienteService.excluirCliente(codigo);
-
+    
+    //-- DELETE http://localhost:8080/usuario/4
+    @DeleteMapping("{id}")
+    public ResponseEntity<RespostaDto> deletarCliente(@PathVariable Long id){
+        
+        boolean retorno = clienteService.excluirCliente(id);
+        
         RespostaDto resposta = new RespostaDto();
-
         resposta.setMensagem(retorno ? "Delete realizado com sucesso" : "Erro ao realizar delete");
-
-        return ResponseEntity.status(HttpStatus.OK).body(resposta);
-
+        
+        return ResponseEntity.status(HttpStatus.OK).body(resposta); 
     }
-
+    
+    
+    @GetMapping()
+    public ResponseEntity<List<ClienteModel>> obterCliente(){
+        
+        List<ClienteModel> lista = clienteService.obterLista();
+        
+        return ResponseEntity.status(HttpStatus.OK).body(lista); 
+        
+    }
+    
 }

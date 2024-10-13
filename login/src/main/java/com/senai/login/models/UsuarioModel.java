@@ -8,21 +8,21 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "USUARIO")
+@Table(name="USUARIO")
 public class UsuarioModel {
-
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long codigo;
-
-    @Column(name = "UsuarioNome")
+    
+    @Column(name="UsuarioNome")
     private String nome;
-
-    @Column(name = "UsuarioLogin")
+    
+    @Column(name="UsuarioLogin")
     private String login;
-
-    @Column(name = "UsuarioSenha")
-    private String senha;
+    
+    @Column(name="UsuarioSenha")
+    private String senha;   
 
     public UsuarioModel() {
     }

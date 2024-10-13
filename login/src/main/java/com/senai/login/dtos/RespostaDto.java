@@ -1,7 +1,7 @@
 package com.senai.login.dtos;
 
 public class RespostaDto {
-
+    
     private String mensagem;
 
     public RespostaDto() {

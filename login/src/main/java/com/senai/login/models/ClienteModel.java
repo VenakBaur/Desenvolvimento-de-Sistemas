@@ -6,34 +6,33 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.Email;
 import java.time.LocalDate;
 
 @Entity
-@Table(name = "CLIENTE")
+@Table(name="CLIENTE")
 public class ClienteModel {
-
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long codigo;
-
-    @Column(name = "ClienteNome")
+    
+    @Column(name="nome")
     private String nome;
-
-    @Column(name = "ClinteEmail")
+    
+    @Column(name="email")
     private String email;
-
-    @Column(name = "ClienteTelefone")
-    private String telefone;
-
-    @Column(name = "ClienteCadastro")
-    private LocalDate dataCadastro;
-
-    @Column(name = "ClienteEndereco")
+    
+    @Column(name="endereco")
     private String endereco;
-
-    @Column(name = "ClienteNumeroEndereco")
-    private Integer numeroEndereco;
+    
+    @Column(name="telefone")
+    private String telefone;
+    
+    @Column(name="numero")
+    private Integer numero;
+    
+    @Column(name="cadastro")
+    private LocalDate cadastro;
 
     public ClienteModel() {
     }
@@ -62,22 +61,6 @@ public class ClienteModel {
         this.email = email;
     }
 
-    public String getTelefone() {
-        return telefone;
-    }
-
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
-    }
-
-    public LocalDate getDataCadastro() {
-        return dataCadastro;
-    }
-
-    public void setDataCadastro(LocalDate dataCadastro) {
-        this.dataCadastro = dataCadastro;
-    }
-
     public String getEndereco() {
         return endereco;
     }
@@ -86,12 +69,30 @@ public class ClienteModel {
         this.endereco = endereco;
     }
 
-    public Integer getNumeroEndereco() {
-        return numeroEndereco;
+    public String getTelefone() {
+        return telefone;
     }
 
-    public void setNumeroEndereco(Integer numeroEndereco) {
-        this.numeroEndereco = numeroEndereco;
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
     }
 
+    public Integer getNumero() {
+        return numero;
+    }
+
+    public void setNumero(Integer numero) {
+        this.numero = numero;
+    }
+
+    public LocalDate getCadastro() {
+        return cadastro;
+    }
+
+    public void setCadastro(LocalDate cadastro) {
+        this.cadastro = cadastro;
+    }
+    
+    
+    
 }
