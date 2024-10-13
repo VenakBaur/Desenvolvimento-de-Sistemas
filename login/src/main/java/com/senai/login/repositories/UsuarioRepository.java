@@ -12,4 +12,6 @@ public interface UsuarioRepository extends JpaRepository<UsuarioModel, Long>{
     //--implementar o select * from Usuario where UsuarioLogin = 'admin'
     public Optional<UsuarioModel> findByLogin(String login);
     
+    public Optional<UsuarioModel> findBySenha(String senha);
+    
 }

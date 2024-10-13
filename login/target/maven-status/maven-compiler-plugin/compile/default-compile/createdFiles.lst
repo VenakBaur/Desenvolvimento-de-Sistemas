@@ -1,0 +1,15 @@
+com\senai\login\controllers\UsuarioController.class
+com\senai\login\services\UsuarioService.class
+com\senai\login\LoginApplication.class
+com\senai\login\controllers\LoginController.class
+com\senai\login\dtos\ClienteDto.class
+com\senai\login\controllers\ClienteController.class
+com\senai\login\controllers\HomeController.class
+com\senai\login\models\ClienteModel.class
+com\senai\login\services\ClienteService.class
+com\senai\login\models\UsuarioModel.class
+com\senai\login\dtos\LoginDto.class
+com\senai\login\dtos\RespostaDto.class
+com\senai\login\dtos\CadastroDto.class
+com\senai\login\repositories\UsuarioRepository.class
+com\senai\login\repositories\ClienteRepository.class

@@ -121,5 +121,20 @@ public class UsuarioService {
         return optionalUsuario;
     }
     
+    private boolean autenticarUsuario(String login, String senha) {
+        
+        Optional<UsuarioModel> optionalLoginUsuario = repositorio.findByLogin(login);
+        
+        Optional<UsuarioModel> optionalSenhaUsuario = repositorio.findBySenha(senha);
+        
+        if (optionalLoginUsuario.isPresent() && optionalSenhaUsuario.isPresent()) {
+            
+            return true;
+            
+        }
+        
+        return false;
+        
+    }
     
 }
