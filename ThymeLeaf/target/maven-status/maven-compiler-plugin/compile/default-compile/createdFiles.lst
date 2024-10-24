@@ -1,0 +1,14 @@
+com\senai\ThymeLeaf\ThymeLeafApplication.class
+com\senai\ThymeLeaf\repositories\UsuarioRepository.class
+com\senai\ThymeLeaf\models\ContatoModel.class
+com\senai\ThymeLeaf\dtos\LoginDto.class
+com\senai\ThymeLeaf\controllers\VisualizarUsuarioController.class
+com\senai\ThymeLeaf\controllers\CadastrarUsuarioController.class
+com\senai\ThymeLeaf\controllers\HomeController.class
+com\senai\ThymeLeaf\services\UsuarioService.class
+com\senai\ThymeLeaf\controllers\LoginController.class
+com\senai\ThymeLeaf\dtos\CadastroDto.class
+com\senai\ThymeLeaf\controllers\ListaUsuariosController.class
+com\senai\ThymeLeaf\dtos\UsuarioDto.class
+com\senai\ThymeLeaf\controllers\UsuarioController.class
+com\senai\ThymeLeaf\models\UsuarioModel.class
